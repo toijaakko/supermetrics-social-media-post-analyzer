@@ -1,0 +1,34 @@
+{
+    "name": "toijaakko/supermetrics-social-media-post-analyzer",
+    "description": "Supermetrics Social Media Post Analyzer",
+    "type": "library",
+    "license": ["GPL-3.0-or-later"],
+    "require": {
+        "php": "~7.4",
+        "ext-curl": "^7.4",
+        "ext-json": "^7.4",
+        "vlucas/phpdotenv": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "SuperMetrics\\": "src/"
+        }
+    },
+    "scripts": {
+        "run-analyzer": "php run-analyzer.php",
+        "lint": "composer lint:php-cs-fixer",
+        "lint:fix": "composer lint:php-cs-fixer:fix",
+        "test": "composer test:unit && composer test:static-analysis",
+        "test:unit": "phpunit src/",
+        "test:static-analysis": "phpstan analyse src/",
+        "lint:php-cs-fixer": "php-cs-fixer fix --config=.php_cs --verbose --dry-run",
+        "lint:php-cs-fixer:fix": "php-cs-fixer fix --config=.php_cs --verbose"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpstan/phpstan": "^0.12.54",
+        "mavimo/phpstan-junit": "^0.3.0"
+    }
+}

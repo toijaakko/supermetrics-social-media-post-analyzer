@@ -1,0 +1,6 @@
+# Disabling parallel processing makes running analyzer more reliable,
+# especially on host systems not fully controlled by the user,
+# such as continuous integration servers.
+parameters:
+	parallel:
+		maximumNumberOfProcesses: 1

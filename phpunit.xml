@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/6.2/phpunit.xsd"
+         columns="max"
+         colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         bootstrap="vendor/autoload.php">
+    <testsuite name="Unit_Tests_Src_Code">
+        <directory suffix="Test.php">src/*/Test/Unit</directory>
+    </testsuite>
+    <php>
+        <ini name="date.timezone" value="Europe/Helsinki"/>
+        <ini name="xdebug.max_nesting_level" value="200"/>
+    </php>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/*/*/*/*</directory>
+            <exclude>
+                <directory>src/*/Test</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml" showUncoveredFiles="false"/>
+        <log type="coverage-html" target="build/coverage" showUncoveredFiles="false"/>
+        <log type="junit" target="test-reports/junit.xml" showUncoveredFiles="false"/>
+        <log type="coverage-text" target="php://stdout" showOnlySummary="true" showUncoveredFiles="false"/>
+    </logging>
+</phpunit>
