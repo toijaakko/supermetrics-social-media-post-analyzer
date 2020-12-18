@@ -1,11 +1,5 @@
 <?php
 $header = '
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-';
-$header = '
 Copyright (c) Jaakko Toivanen (https://github.com/toijaakko)
 
 See LICENSE.txt for license details
